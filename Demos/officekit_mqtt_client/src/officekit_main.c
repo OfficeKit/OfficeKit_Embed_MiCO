@@ -528,7 +528,7 @@ static void uartRecv_thread(void *app_ctx)
   
   while(1) {
     recvlen = _uart_get_one_packet(inDataBuffer, UART_ONE_PACKAGE_LENGTH);
-    if (recvlen <= 0)
+    if (recvlen != 13)
       continue; 
     app_log("DATA From UART %s",inDataBuffer);
     //push data to mqtt server
